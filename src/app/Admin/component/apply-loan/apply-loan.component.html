@@ -1,0 +1,68 @@
+<div class="main-content ">
+    <div class="container-fluid card pb-3"> 
+        <div>
+            <h1 class="text-center"> Loan Application Form </h1>
+        </div>
+<form #applyloanform (submit)="onsubmit(applyloanform)" >
+         
+    <div class="modal-body">
+      <p *ngIf="message" class="text-success text-center" > {{message }} </p>
+        
+      <div class="row ms-1">
+        <div class="col form-outline mt-1 mb-1">
+            <label class="form-label" for="form7Example1"> Customer Name </label>
+            <select  id="selecttag" class="form-select border border-dark " 
+             name="customer"  required  [(ngModel)]="loan.borrower.nationalId" (change)="Display($event)" > 
+             <option disabled selected value="" > Choose The name of the Borrower </option>
+              <option *ngFor="let cust of customers" value = {{cust.nationalId}} > {{cust.firstName}} {{cust.lastName}} </option>        
+          </select>
+          </div>  
+          <div class="col form-outline mt-1 mb-1">
+            <label class="form-label" for="form7Example1"> Date Borrowed  </label>
+            <input type="date" id="form7Example1" class="form-control border border-dark "  
+            name="dateborrowed" required  [(ngModel)]="loan.dateBorrowed" />  
+          </div>             
+          
+        
+        </div>
+
+        <div class="row ms-1">
+          <div class="col form-outline mt-1 mb-1">
+              <label class="form-label" for="form7Example1"  > Amount </label>
+              <input type="number" id="form7Example1" class="form-control border border-dark "  
+              name="amount"  required  [(ngModel)]="loan.amount" />          
+           
+            </div> 
+            <div class="col form-outline mt-1 mb-1">
+              <label class="form-label" for="form7Example1"  > Interest Rate in Percent </label>
+              <input type="number" min="0" max="100" id="form7Example1" class="form-control border border-dark "  
+              name="rate" [(ngModel)]="loan.interestRate"  />          
+           
+            </div>           
+          
+          </div>
+
+          <div class="row ms-1">
+            <div class="col form-outline mt-1 mb-1">
+                <label class="form-label" for="form7Example1"  > Duration in Months  </label>
+                <input type="number" id="form7Example1" class="form-control border border-dark "  
+                name="duration" [(ngModel)]="loan.duration"  />  
+                <span *ngIf="applyloanform['numberInput']?.errors?.min">Value must be at least 5</span>
+                <span *ngIf="applyloanform['numberInput']?.errors?.max">Value must not exceed 100</span>        
+             
+              </div> 
+              <div class="col  mb-1">
+                <button type="submit" class="btn btn-primary btn-block " style="margin-top: 2em; width: 100%;" > Add </button>
+                 
+              </div>             
+            
+            </div>
+          
+                         
+
+    </div>
+    
+  </form>
+
+  </div>
+  </div>

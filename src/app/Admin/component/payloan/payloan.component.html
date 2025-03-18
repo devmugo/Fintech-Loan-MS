@@ -1,0 +1,34 @@
+<div class="main-content">
+    <div class="container-fluid"> 
+
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Installment No</th>
+        <th scope="col"> Amount Payable </th>
+        <th scope="col"> Date Due </th>       
+        <th scope="col"> Payment Status </th>               
+        <th scope="col"> Action</th>        
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let inst of installments; let i = index">
+            <td> {{i+ 1 }}</td>
+            <td> {{inst.payment| currency:'KSH':'symbol':'1.2-2'}} </td>
+            <td> {{inst.duedate| date:'fullDate'  }} </td>
+            <td > {{inst.status}}</td>
+                
+            <td>
+                <button *ngIf="inst.status.startsWith('pending')"  type="button" class="btn btn-danger btn-sm mx-1 "  (click)="payModal(i)"  > Pay</button>
+                <button *ngIf="inst.status.startsWith('paid')" type="button" class="btn btn-success btn-sm mx-1 "  > Paid</button>
+            </td>
+
+            
+
+        </tr>
+    </tbody>
+</table>
+
+</div>
+</div>
+

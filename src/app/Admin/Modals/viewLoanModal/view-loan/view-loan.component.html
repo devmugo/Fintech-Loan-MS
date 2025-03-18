@@ -1,0 +1,54 @@
+         
+   <div class="modal-body">  
+    <h1 class="text-center"> View Loan Details </h1>   
+        
+      <div class="row ms-1"> 
+        <div class="col form-outline mt-1 mb-1">
+            <label class="form-label" for="form7Example1"> Customer Name </label>
+            <div class="col form-outline mt-1 mb-1">               
+                <input type="text" id="form7Example1" class="form-control border border-dark "  
+                name="cname" [(ngModel)]="customerName" disabled />      
+             
+              </div> 
+
+          </div>  
+          <div class="col form-outline mt-1 mb-1">
+            <label class="form-label" for="form7Example1"> Date Borrowed  </label>
+            <input type="text" id="form7Example1" class="form-control border border-dark "  
+            name="dateborrowed"  [(ngModel)]="dateBorrowed" disabled  />  
+          </div> 
+        </div>
+          <div class="row ms-1"> 
+            <div class="col form-outline mt-1 mb-1">
+                <label class="form-label" for="form7Example1"  > Amount </label>
+                <input type="text" id="form7Example1" class="form-control border border-dark "  
+                name="amount" [(ngModel)]="amountBorrowed" disabled  />          
+             
+              </div> 
+
+            <div class="col form-outline mt-1 mb-1">
+                <label class="form-label" for="form7Example1"  > Interest Rate in Percent </label>
+                <input type="text" min="0" max="100" id="form7Example1" class="form-control border border-dark "  
+                name="rate" [(ngModel)]="interestRate" disabled  />      
+             
+              </div> 
+
+        <div class="row ms-1 mb-2">
+           
+            <div class="col form-outline mt-1 mb-1">
+                <label class="form-label" for="form7Example1"  > Duration in Months  </label>
+                <input type="text" id="form7Example1" class="form-control border border-dark "  
+                name="duration" [(ngModel)]="duration" disabled   />                
+             
+              </div>     
+              <div class="col form-outline mb-1">
+                <button class="btn btn-danger" style="width: 100%; margin-top: 2em;" (click)="closeModal()" > Close </button>             
+              
+               </div>      
+          
+          </div>
+
+
+    </div>
+
+
