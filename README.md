@@ -1,3 +1,6 @@
+#Overview
+This app manages loans for a loan lending organisation . Build in Angular it manages customers , manages loans and generates payment schedules automatically 
+
 # FintechLoanMS
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
